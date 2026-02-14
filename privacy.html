@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adatvédelmi Tájékoztató - Listify</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'app-black': '#050505',
+                        'app-text': '#f5f5f7',
+                        'app-gray': '#86868b',
+                        'app-border': '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000;
+            color: #f5f5f7;
+        }
+
+        .prose h2 {
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            color: #a1a1a6;
+        }
+
+        .prose ul {
+            list-style-type: disc;
+            margin-left: 1.5em;
+            margin-bottom: 1em;
+            color: #a1a1a6;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-white/20 selection:text-white">
+
+    <div class="max-w-3xl mx-auto px-6 py-12">
+
+        <!-- Back Button -->
+        <a href="index.html"
+            class="inline-flex items-center gap-2 text-sm text-app-gray hover:text-white transition-colors mb-8 group">
+            <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Vissza a főoldalra
+        </a>
+
+        <header class="mb-12 border-b border-app-border pb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Adatvédelmi Tájékoztató</h1>
+            <p class="text-app-gray text-sm">Utolsó frissítés: 2026. február 14.</p>
+        </header>
+
+        <article class="prose prose-invert max-w-none">
+            <p>A Listify ("szolgáltatás", "alkalmazás") elkötelezett az Ön személyes adatainak védelme mellett. Ez a
+                dokumentum részletezi, hogyan gyűjtjük, használjuk és védjük az Ön adatait.</p>
+
+            <h2>1. Milyen adatokat gyűjtünk?</h2>
+            <p>Az alkalmazás használata során a következő típusú adatokat gyűjthetjük:</p>
+            <ul>
+                <li><strong>Fiókadatok:</strong> Név, e-mail cím regisztrációkor.</li>
+                <li><strong>Felhasználói tartalom:</strong> A létrehozott listák, feladatok és megjegyzések tartalma,
+                    melyeket a felhőben szinkronizálunk.</li>
+                <li><strong>Használati adatok:</strong> Névtelenített statisztikák az alkalmazás teljesítményéről és
+                    hibáiról.</li>
+            </ul>
+
+            <h2>2. Hogyan használjuk az adatait?</h2>
+            <p>Az adatokat kizárólag a szolgáltatás nyújtása és fejlesztése érdekében használjuk:</p>
+            <ul>
+                <li>A fiók azonosítása és biztonsága érdekében.</li>
+                <li>A listák szinkronizálása eszközei között.</li>
+                <li>A "Családi megosztás" funkció biztosítása.</li>
+                <li>Ügyfélszolgálat és hibaelhárítás.</li>
+            </ul>
+
+            <h2>3. Adattovábbítás haramadik félnek</h2>
+            <p>Nem értékesítjük személyes adatait harmadik félnek. Adatait csak a szolgáltatás működtetéséhez szükséges
+                megbízható partnerekkel (pl. felhőszolgáltatók, analitika) osztjuk meg, szigorú titoktartás mellett.</p>
+
+            <h2>4. Az Ön jogai</h2>
+            <p>Önnek joga van kérni adatai törlését, módosítását, vagy másolatot kérni a tárolt adatairól. Ehhez vegye
+                fel velünk a kapcsolatot a támogatási email címen.</p>
+
+            <h2>5. Kapcsolat</h2>
+            <p>Amennyiben kérdése van az adatvédelemmel kapcsolatban, kérjük írjon nekünk: <br> <a
+                    href="mailto:support@listify.app" class="text-white hover:underline">support@listify.app</a></p>
+        </article>
+
+        <footer class="mt-16 pt-8 border-t border-app-border text-center text-xs text-app-gray">
+            &copy; 2026 Listify App. Minden jog fenntartva.
+        </footer>
+    </div>
+
+</body>
+
+</html>

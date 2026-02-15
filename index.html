@@ -172,9 +172,19 @@
             </a>
 
             <!-- CTA -->
-            <a href="#download" class="btn-ios">
-                Download
-            </a>
+            <!-- Language & CTA -->
+            <div class="flex items-center gap-6">
+                <a href="hu/index.html" onclick="localStorage.setItem('listify_lang', 'hu')"
+                    class="group flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors">
+                    <img src="Assets/flag_hu.svg" alt="Magyar"
+                        class="w-5 h-5 rounded-full object-cover shadow-sm group-hover:scale-110 transition-transform duration-200">
+                    <span>Magyar</span>
+                </a>
+
+                <a href="#download" class="btn-ios">
+                    Download
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -201,7 +211,7 @@
             </div>
 
             <p class="mt-8 text-xs font-medium text-gray-600">
-                Requires iOS 16.0+
+                Requires iOS 26.0+
             </p>
         </section>
 
@@ -246,7 +256,7 @@
 
                 <!-- Image -->
                 <div class="flex-1 relative order-1 lg:order-2 flex justify-center">
-                    <img src="Assets/feature-family.png" alt="Listify Family Interface"
+                    <img src="Assets/feature-family-en.png" alt="Listify Family Interface"
                         class="w-full max-w-[320px] h-auto drop-shadow-2xl opacity-90 hover:opacity-100 transition-opacity duration-500">
                 </div>
             </section>
@@ -256,7 +266,7 @@
 
                 <!-- Image -->
                 <div class="flex-1 relative flex justify-center">
-                    <img src="Assets/feature-friend.png" alt="Listify Community Interface"
+                    <img src="Assets/feature-friend-en.png" alt="Listify Community Interface"
                         class="w-full max-w-[320px] h-auto drop-shadow-2xl opacity-90 hover:opacity-100 transition-opacity duration-500">
                 </div>
 
@@ -307,12 +317,7 @@
                     <a href="support.html" class="text-sm text-gray-500 hover:text-white transition-colors">Support</a>
                 </div>
 
-                <div class="flex items-center gap-4 mt-2">
-                    <a href="hu/index.html" onclick="localStorage.setItem('listify_lang', 'hu')"
-                        class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-xs text-gray-400 hover:bg-white/10 hover:text-white transition-all">
-                        🇭🇺 Magyar
-                    </a>
-                </div>
+
 
                 <p class="text-[11px] text-gray-700 mt-6">
                     &copy; 2026 Listify. All rights reserved.

@@ -130,7 +130,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const nav = document.querySelector('nav');
+            const navCta = document.getElementById('nav-cta');
+            const langBtn = document.getElementById('lang-btn');
+            const heroCta = document.getElementById('download');
+
             const handleScroll = () => {
+                // Nav blur effekt
                 if (window.scrollY > 20) {
                     nav.classList.add('nav-blur', 'py-4');
                     nav.classList.remove('bg-transparent', 'py-4');
@@ -138,8 +143,27 @@
                     nav.classList.remove('nav-blur', 'py-4');
                     nav.classList.add('bg-transparent', 'py-4');
                 }
+
+                // Dinamikus gomb megjelenítés
+                if (heroCta) {
+                    const heroBottom = heroCta.getBoundingClientRect().bottom;
+
+                    // Ha a Hero gomb alja feljebb van, mint a fejléc alja (vagyis kiment a képből felfelé)
+                    if (heroBottom < 100) {
+                        // Letöltés gomb megjelenítése (kinyitás)
+                        navCta.classList.remove('!max-w-0', '!opacity-0', '!px-0', '!py-0', '!border-transparent');
+                        navCta.classList.add('max-w-[150px]', 'opacity-100');
+                    } else {
+                        // Letöltés gomb elrejtése (összecsukás)
+                        navCta.classList.remove('max-w-[150px]', 'opacity-100');
+                        navCta.classList.add('!max-w-0', '!opacity-0', '!px-0', '!py-0', '!border-transparent');
+                    }
+                }
             };
+
             window.addEventListener('scroll', handleScroll);
+            // Kezdeti állapot ellenőrzése
+            handleScroll();
         });
     </script>
 </head>
@@ -156,9 +180,23 @@
             </a>
 
             <!-- CTA -->
-            <a href="#download" class="btn-ios">
-                Letöltés
-            </a>
+            <!-- Language & CTA -->
+            <div class="flex items-center gap-6">
+                <!-- English -->
+                <!-- English -->
+                <a href="../index.html" id="lang-btn" onclick="localStorage.setItem('listify_lang', 'en')"
+                    class="group flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-all duration-300">
+                    <img src="../Assets/flag_en.svg" alt="English"
+                        class="w-5 h-5 rounded-full object-cover shadow-sm group-hover:scale-110 transition-transform duration-200">
+                    <span>English</span>
+                </a>
+
+                <!-- Letöltés Gomb (szélesség animációval a sima csúszásért) -->
+                <a href="#download" id="nav-cta"
+                    class="btn-ios overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out !max-w-0 !opacity-0 !px-0 !py-0 !border-transparent">
+                    Letöltés
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -186,7 +224,7 @@
             </div>
 
             <p class="mt-8 text-xs font-medium text-gray-600">
-                iOS 16.0+ szükséges
+                iOS 26.0+ szükséges
             </p>
         </section>
 
@@ -294,12 +332,7 @@
                         class="text-sm text-gray-500 hover:text-white transition-colors">Támogatás</a>
                 </div>
 
-                <div class="flex items-center gap-4 mt-2">
-                    <a href="../index.html" onclick="localStorage.setItem('listify_lang', 'en')"
-                        class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-xs text-gray-400 hover:bg-white/10 hover:text-white transition-all">
-                        🇺🇸 English
-                    </a>
-                </div>
+
 
                 <p class="text-[11px] text-gray-700 mt-6">
                     &copy; 2026 Listify. Minden jog fenntartva.

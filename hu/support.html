@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>Támogatás - Listify</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        @view-transition {
+            navigation: auto;
+        }
+
+        /* Glass / Border Utilities */
+        .nav-blur {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-ios {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        .btn-ios:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: #9CA3AF;
+            line-height: 1.6;
+        }
+
+        *:focus {
+            outline: none;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.querySelector('nav');
+            const handleScroll = () => {
+                if (window.scrollY > 20) {
+                    nav.classList.add('nav-blur', 'py-4');
+                    nav.classList.remove('bg-transparent', 'py-4');
+                } else {
+                    nav.classList.remove('nav-blur', 'py-4');
+                    nav.classList.add('bg-transparent', 'py-4');
+                }
+            };
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</head>
+
+<body class="overflow-x-hidden selection:bg-white selection:text-black">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out bg-transparent py-4 border-b border-transparent">
+        <div class="w-full px-8 md:px-12 flex justify-between items-center">
+            <!-- Brand -->
+            <a href="index.html"
+                class="font-extrabold text-3xl tracking-tight text-white hover:opacity-80 transition-opacity">
+                Listify
+            </a>
+
+            <!-- CTA -->
+            <a href="index.html#download" class="btn-ios">
+                Letöltés
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-32 pb-20">
+
+        <div class="max-w-3xl mx-auto px-6">
+
+            <!-- Back Link -->
+            <div class="mb-8 pt-4">
+                <a href="index.html"
+                    class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-white transition-colors group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="transition-transform group-hover:-translate-x-1">
+                        <path d="M19 12H5" />
+                        <path d="M12 19l-7-7 7-7" />
+                    </svg>
+                    Vissza a főoldalra
+                </a>
+            </div>
+
+            <header class="mb-16 border-b border-white/10 pb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Támogatás</h1>
+                <p class="text-gray-400 text-lg">Gyakori kérdések és segítségnyújtás.</p>
+            </header>
+
+            <!-- FAQ Section -->
+            <div class="mb-20">
+                <div class="faq-item">
+                    <h3 class="faq-question">Hogyan törölhetem a fiókomat?</h3>
+                    <p class="faq-answer">
+                        Fiókját közvetlenül az alkalmazáson belül törölheti. Lépjen a <strong>Beállítások &gt; Fiók &gt;
+                            Fiók törlése</strong> menüpontra. Fiókja egy 60 napos türelmi időszakba lép, majd véglegesen
+                        törlődik.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Hogyan oszthatok meg egy listát?</h3>
+                    <p class="faq-answer">
+                        Nyissa meg a megosztani kívánt listát, koppintson a jobb felső sarokban lévő "Megosztás" ikonra,
+                        és válasszon egy partnert. A meghívott félnek rendelkeznie kell a Listify alkalmazással.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Elfelejtettem a jelszavamat. Hogyan állíthatom vissza?</h3>
+                    <p class="faq-answer">
+                        A bejelentkezési képernyőn koppintson az "Elfelejtett jelszó?" lehetőségre. Adja meg e-mail
+                        címét, és küldünk egy linket a jelszó visszaállításához.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Hogyan mondhatom le az előfizetést?</h3>
+                    <p class="faq-answer">
+                        Előfizetéseit az iPhone Beállításokban kezelheti. Lépjen a <strong>Beállítások &gt; [Az Ön Neve]
+                            &gt; Előfizetések</strong> menüpontra, válassza a Listify-t, majd koppintson az "Előfizetés
+                        lemondása" gombra.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="bg-zinc-900/50 border border-white/10 rounded-2xl p-8 text-center">
+                <h2 class="text-2xl font-bold text-white mb-4">További segítségre van szüksége?</h2>
+                <p class="text-gray-400 mb-8 max-w-lg mx-auto">
+                    Ha nem találta meg a választ a kérdésére, ügyfélszolgálatunk készséggel áll rendelkezésére.
+                </p>
+                <a href="mailto:support@listify.app"
+                    class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Írjon nekünk
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="border-t border-white/10 bg-black pt-16 pb-12 mt-24">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-8 text-center">
+
+                <div class="flex flex-wrap justify-center gap-8">
+                    <a href="privacy.html"
+                        class="text-sm text-gray-500 hover:text-white transition-colors">Adatvédelem</a>
+                    <a href="terms.html" class="text-sm text-gray-500 hover:text-white transition-colors">Feltételek</a>
+                    <a href="support.html" class="text-sm text-white transition-colors">Támogatás</a>
+                </div>
+
+                <div class="flex items-center gap-4 mt-2">
+                    <a href="../support.html" onclick="localStorage.setItem('listify_lang', 'en')"
+                        class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-xs text-gray-400 hover:bg-white/10 hover:text-white transition-all">
+                        🇺🇸 English
+                    </a>
+                </div>
+
+                <p class="text-[11px] text-gray-700 mt-6">
+                    &copy; 2026 Listify. Minden jog fenntartva.
+                </p>
+            </div>
+        </footer>
+
+    </main>
+</body>
+
+</html>
